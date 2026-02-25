@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #0A0F1F;
+  --background: #020617; /* Noir profond des photos */
   --foreground: #E8ECF4;
   --card: #0F1629;
   --card-foreground: #E8ECF4;
@@ -79,9 +79,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  html {
+    scroll-behavior: smooth; /* INDISPENSABLE pour ton bouton "Voir mes projets" */
+  }
 }
 
-/* Neon glow utilities */
+/* --- UTILITAIRES NÉON (Améliorés) --- */
 .neon-glow {
   box-shadow: 0 0 20px rgba(0, 229, 255, 0.15), 0 0 60px rgba(0, 229, 255, 0.05);
 }
@@ -94,10 +97,12 @@
   text-shadow: 0 0 20px rgba(0, 229, 255, 0.5), 0 0 40px rgba(0, 229, 255, 0.2);
 }
 
+/* --- EFFET VERRE (Glassmorphism) --- */
 .glass {
   background: rgba(15, 22, 41, 0.6);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 229, 255, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
 .glass:hover {
@@ -105,30 +110,22 @@
   box-shadow: 0 0 30px rgba(0, 229, 255, 0.08);
 }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom scrollbar */
+/* --- SCROLLBAR PERSONNALISÉE --- */
 ::-webkit-scrollbar {
   width: 6px;
 }
-
 ::-webkit-scrollbar-track {
   background: #0A0F1F;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #1E2A45;
   border-radius: 3px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #00E5FF;
 }
 
-/* Animated gradient border */
+/* --- BORDURE GRADIENT ANIMÉE --- */
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -152,7 +149,7 @@ html {
   pointer-events: none;
 }
 
-/* Floating animation */
+/* --- ANIMATIONS DE FLOTTEMENT --- */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -171,7 +168,7 @@ html {
   animation: float-delayed 8s ease-in-out infinite;
 }
 
-/* Pulse glow */
+/* --- PULSATION ET APPARITION --- */
 @keyframes pulse-glow {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 1; }
@@ -181,7 +178,6 @@ html {
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
-/* Fade in up animation */
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -197,7 +193,7 @@ html {
   animation: fade-in-up 0.8s ease-out forwards;
 }
 
-/* Stagger delays */
+/* --- DÉLAIS (STAGGER) --- */
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }

@@ -36,38 +36,20 @@ function SkillCard({ icon, title, items, delay }: SkillCardProps) {
 
 const skills = [
   {
-    icon: <Database className="h-7 w-7 text-primary" />,
-    title: "Data Engineering & ETL",
-    items: [
-      "Talend & Airflow",
-      "Architecture BigQuery",
-      "Pipelines SQL & ETL",
-      "GCP & Cloud Storage",
-    ],
-    delay: "delay-100",
+    category: "Data Engineering & ETL",
+    icon: <Database className="text-cyan-400" />,
+    items: ["Talend & Airflow", "Architecture BigQuery", "Pipelines SQL & ETL", "Python / PySpark distribué", "Docker & Cloud Storage"]
   },
   {
-    icon: <BarChart3 className="h-7 w-7 text-primary" />,
-    title: "BI & Data Visualization",
-    items: [
-      "Looker (LookML)",
-      "Power BI (DAX)",
-      "Looker Studio",
-      "Dashboards Stratégiques",
-    ],
-    delay: "delay-200",
+    category: "BI & Data Visualization",
+    icon: <BarChart3 className="text-cyan-400" />,
+    items: ["Looker (LookML)", "Power BI (DAX)", "Looker Studio", "Dashboards Stratégiques"]
   },
   {
-    icon: <Brain className="h-7 w-7 text-primary" />,
-    title: "IA & Machine Learning",
-    items: [
-      "Maintenance Prédictive",
-      "Forecasting (Ventes)",
-      "Python (Scikit-learn)",
-      "LLM & Chatbots Pro",
-    ],
-    delay: "delay-300",
-  },
+    category: "IA & Machine Learning",
+    icon: <Cpu className="text-cyan-400" />,
+    items: ["Maintenance Prédictive", "Forecasting (Ventes)", "Python (Scikit-learn)", "CNN & Deep Learning", "LLM & Chatbots Pro"]
+  }
 ]
 
 export function Skills() {
