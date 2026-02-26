@@ -1,6 +1,6 @@
 "use client"
 
-import { Brain, Database, BarChart3, Cloud, Code2, Bot } from "lucide-react"
+import { Database, BarChart3, Cpu } from "lucide-react"
 import type { ReactNode } from "react"
 
 interface SkillCardProps {
@@ -70,7 +70,13 @@ export function Skills() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {skills.map((skill) => (
-            <SkillCard key={skill.title} {...skill} />
+            <SkillCard
+              key={skill.category}
+              title={skill.category}
+              icon={skill.icon}
+              items={skill.items}
+              delay="delay-100"
+            />
           ))}
         </div>
       </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowDown, Download, Brain, Cpu, Network, Zap } from "lucide-react"
+import { Brain, Cpu, Network, Zap } from "lucide-react"
 
 function AIBrainIllustration() {
   return (
@@ -41,74 +41,61 @@ function AIBrainIllustration() {
   )
 }
 
-export function Hero() {
+const formations = [
+  {
+    degree: "Master 2 - Data Science & IA",
+    school: "EFREI Paris",
+    period: "2023 - 2026",
+    description: "Spécialisation en Machine Learning, Deep Learning et Business Intelligence.",
+  },
+  {
+    degree: "Bachelor - Informatique",
+    school: "EFREI Paris",
+    period: "2020 - 2023",
+    description: "Fondamentaux en développement logiciel, algorithmique et bases de données.",
+  },
+]
+
+export function Formation() {
   return (
-    <section
-      id="accueil"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
-    >
-      {/* Background gradient spots */}
+    <section id="formation" className="relative py-28 px-6">
       <div
-        className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full blur-3xl"
-        style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%)' }}
-      />
-      <div
-        className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full blur-3xl"
-        style={{ background: 'radial-gradient(circle, rgba(0,136,204,0.06) 0%, transparent 70%)' }}
+        className="absolute top-0 right-0 h-96 w-96 rounded-full blur-3xl"
+        style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.04) 0%, transparent 70%)' }}
       />
 
-      <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center gap-16 lg:flex-row lg:items-center lg:gap-20">
-        {/* Left: Text Content */}
-        <div className="flex-1 text-center lg:text-left">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 px-4 py-1.5 text-xs font-medium text-primary" style={{ background: 'rgba(0,229,255,0.05)' }}>
-            <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-            Disponible pour CDI Septembre 2026
-          </div>
-
-          <h1 className="mb-4 text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl text-balance">
-            Rayane{" "}
-            <span className="text-primary neon-text">Dziri</span>
-          </h1>
-
-          <p className="mb-2 text-lg font-medium text-primary/80 md:text-xl">
-            Data Analyst & BI Developer
+      <div className="relative mx-auto max-w-6xl">
+        <div className="mb-16 text-center">
+          <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-widest text-primary">
+            Formation
+          </span>
+          <h2 className="text-3xl font-bold text-foreground md:text-4xl text-balance">
+            Parcours académique
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-muted-foreground">
+            {"Une formation d'excellence orientée data, IA et systèmes d'information."}
           </p>
-
-          <p className="mb-8 max-w-lg text-base leading-relaxed text-muted-foreground lg:max-w-md">
-            {"Passionné par la transformation des données en leviers de décision stratégiques. Actuellement en alternance chez Exxelia."}
-          </p>
-
-          <div className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
-            <a
-              href="#projets"
-              className="inline-flex items-center gap-2 rounded-xl px-7 py-3 text-sm font-semibold text-primary-foreground transition-all neon-glow-strong hover:scale-105"
-              style={{ background: '#00E5FF' }}
-            >
-              Voir mes projets
-              <ArrowDown className="h-4 w-4" />
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-primary/30 px-7 py-3 text-sm font-semibold text-primary transition-all hover:border-primary/60 hover:neon-glow"
-              style={{ background: 'rgba(0,229,255,0.03)' }}
-            >
-              <Download className="h-4 w-4" />
-              Contact
-            </a>
-          </div>
         </div>
 
-        {/* Right: AI Brain Illustration */}
-        <div className="flex flex-1 items-center justify-center">
-          <AIBrainIllustration />
-        </div>
-      </div>
+        <div className="flex flex-col items-center gap-16 lg:flex-row lg:items-start">
+          {/* Left: Illustration */}
+          <div className="flex flex-1 items-center justify-center">
+            <AIBrainIllustration />
+          </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-xs text-muted-foreground">Scroll</span>
-        <div className="h-8 w-5 rounded-full border border-primary/30 flex items-start justify-center pt-1.5">
-          <div className="h-2 w-1 rounded-full bg-primary animate-bounce" />
+          {/* Right: Formation cards */}
+          <div className="flex flex-1 flex-col gap-6">
+            {formations.map((f) => (
+              <div key={f.degree} className="glass rounded-2xl p-6 transition-all duration-300 hover:scale-[1.01]">
+                <div className="mb-2 flex items-center justify-between">
+                  <h3 className="text-base font-bold text-foreground">{f.degree}</h3>
+                  <span className="text-xs text-muted-foreground">{f.period}</span>
+                </div>
+                <p className="mb-2 text-sm font-medium text-primary">{f.school}</p>
+                <p className="text-sm text-muted-foreground">{f.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
