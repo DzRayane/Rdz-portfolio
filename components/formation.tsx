@@ -1,77 +1,106 @@
 "use client"
 
-import { Brain, Database, BarChart3, Cloud, Code2, Bot, Cpu } from "lucide-react"
-import type { ReactNode } from "react"
+import { ArrowDown, Download, Brain, Cpu, Network, Zap } from "lucide-react"
 
-interface SkillCardProps {
-  icon: ReactNode
-  title: string
-  items: string[]
-  delay: string
-}
-
-function SkillCard({ icon, title, items, delay }: SkillCardProps) {
+function AIBrainIllustration() {
   return (
-    <div
-      className={`glass rounded-2xl p-8 transition-all duration-500 hover:scale-[1.02] opacity-0 animate-fade-in-up ${delay}`}
-    >
-      <div
-        className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl"
-        style={{ background: 'rgba(0,229,255,0.08)' }}
-      >
-        {icon}
+    <div className="relative flex items-center justify-center">
+      <div className="absolute h-80 w-80 rounded-full border border-primary/10 animate-pulse-glow" />
+      <div className="absolute h-64 w-64 rounded-full border border-primary/20 animate-float" />
+      <div className="absolute h-48 w-48 rounded-full border border-primary/10 animate-float-delayed" />
+
+      <div className="relative z-10 flex h-40 w-40 items-center justify-center rounded-full neon-glow-strong" style={{ background: 'rgba(0, 229, 255, 0.05)' }}>
+        <Brain className="h-20 w-20 text-primary animate-pulse-glow" strokeWidth={1.2} />
       </div>
-      <h3 className="mb-4 text-lg font-bold text-foreground">{title}</h3>
-      <ul className="flex flex-col gap-3">
-        {items.map((item, index) => (
-          <li key={index} className="flex items-center gap-3 text-sm text-muted-foreground">
-            <span className="h-1 w-1 rounded-full bg-primary" />
-            {item}
-          </li>
-        ))}
-      </ul>
+
+      <div className="absolute -top-4 -right-4 animate-float">
+        <div className="glass flex h-12 w-12 items-center justify-center rounded-xl">
+          <Cpu className="h-6 w-6 text-primary" />
+        </div>
+      </div>
+      <div className="absolute -bottom-4 -left-4 animate-float-delayed">
+        <div className="glass flex h-12 w-12 items-center justify-center rounded-xl">
+          <Network className="h-6 w-6 text-primary" />
+        </div>
+      </div>
+      <div className="absolute top-8 -left-8 animate-float">
+        <div className="glass flex h-10 w-10 items-center justify-center rounded-lg">
+          <Zap className="h-5 w-5 text-primary" />
+        </div>
+      </div>
+
+      <div
+        className="absolute h-96 w-96 rounded-full blur-3xl"
+        style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.12) 0%, transparent 70%)' }}
+      />
     </div>
   )
 }
 
-const skills = [
-  {
-    category: "Data Engineering & ETL",
-    icon: <Database className="text-cyan-400" />,
-    items: ["Talend & Airflow", "Architecture BigQuery", "Pipelines SQL & ETL", "Python / PySpark distribué", "Docker & Cloud Storage"]
-  },
-  {
-    category: "BI & Data Visualization",
-    icon: <BarChart3 className="text-cyan-400" />,
-    items: ["Looker (LookML)", "Power BI (DAX)", "Looker Studio", "Dashboards Stratégiques"]
-  },
-  {
-    category: "IA & Machine Learning",
-    icon: <Cpu className="text-cyan-400" />,
-    items: ["Maintenance Prédictive", "Forecasting (Ventes)", "Python (Scikit-learn)", "CNN & Deep Learning", "LLM & Chatbots Pro"]
-  }
-]
-
-export function Skills() {
+export function Formation() {
   return (
-    <section id="competences" className="relative py-28 px-6">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-16 text-center">
-          <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-widest text-primary">
-            Expertise
-          </span>
-          <h2 className="text-3xl font-bold text-foreground md:text-4xl text-balance">
-            {"Compétences techniques"}
-          </h2>
-          <p className="mx-auto mt-4 max-w-md text-muted-foreground">
-            {"Maîtrise du cycle complet de la donnée : de l'architecture ETL à l'aide à la décision par l'IA."}
+    <section
+      id="accueil"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
+    >
+      <div
+        className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full blur-3xl"
+        style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%)' }}
+      />
+      <div
+        className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full blur-3xl"
+        style={{ background: 'radial-gradient(circle, rgba(0,136,204,0.06) 0%, transparent 70%)' }}
+      />
+
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center gap-16 lg:flex-row lg:items-center lg:gap-20">
+        <div className="flex-1 text-center lg:text-left">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 px-4 py-1.5 text-xs font-medium text-primary" style={{ background: 'rgba(0,229,255,0.05)' }}>
+            <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+            Disponible pour CDI Septembre 2026
+          </div>
+
+          <h1 className="mb-4 text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl text-balance">
+            Rayane{" "}
+            <span className="text-primary neon-text">Dziri</span>
+          </h1>
+
+          <p className="mb-2 text-lg font-medium text-primary/80 md:text-xl">
+            Data Analyst & BI Developer
           </p>
+
+          <p className="mb-8 max-w-lg text-base leading-relaxed text-muted-foreground lg:max-w-md">
+            {"Passionné par la transformation des données en leviers de décision stratégiques. Actuellement en alternance chez Exxelia."}
+          </p>
+
+          <div className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
+            <a
+              href="#projets"
+              className="inline-flex items-center gap-2 rounded-xl px-7 py-3 text-sm font-semibold text-primary-foreground transition-all neon-glow-strong hover:scale-105"
+              style={{ background: '#00E5FF' }}
+            >
+              Voir mes projets
+              <ArrowDown className="h-4 w-4" />
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-xl border border-primary/30 px-7 py-3 text-sm font-semibold text-primary transition-all hover:border-primary/60 hover:neon-glow"
+              style={{ background: 'rgba(0,229,255,0.03)' }}
+            >
+              <Download className="h-4 w-4" />
+              Contact
+            </a>
+          </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {skills.map((skill) => (
-            <SkillCard key={skill.category} title={skill.category} icon={skill.icon} items={skill.items} delay="delay-100" />
-          ))}
+        <div className="flex flex-1 items-center justify-center">
+          <AIBrainIllustration />
+        </div>
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <span className="text-xs text-muted-foreground">Scroll</span>
+        <div className="h-8 w-5 rounded-full border border-primary/30 flex items-start justify-center pt-1.5">
+          <div className="h-2 w-1 rounded-full bg-primary animate-bounce" />
         </div>
       </div>
     </section>
