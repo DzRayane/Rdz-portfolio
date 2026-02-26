@@ -1,16 +1,16 @@
 "use client"
 
 import { Database, BarChart3, Cpu } from "lucide-react"
-import type { ReactNode } from "react"
+import type { LucideIcon } from "lucide-react"
 
 interface SkillCardProps {
-  icon: ReactNode
+  icon: LucideIcon
   title: string
   items: string[]
   delay: string
 }
 
-function SkillCard({ icon, title, items, delay }: SkillCardProps) {
+function SkillCard({ icon: Icon, title, items, delay }: SkillCardProps) {
   return (
     <div
       className={`glass rounded-2xl p-8 transition-all duration-500 hover:scale-[1.02] opacity-0 animate-fade-in-up ${delay}`}
@@ -19,7 +19,7 @@ function SkillCard({ icon, title, items, delay }: SkillCardProps) {
         className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl"
         style={{ background: 'rgba(0,229,255,0.08)' }}
       >
-        {icon}
+        <Icon className="text-cyan-400" />
       </div>
       <h3 className="mb-4 text-lg font-bold text-foreground">{title}</h3>
       <ul className="flex flex-col gap-3">
@@ -37,17 +37,17 @@ function SkillCard({ icon, title, items, delay }: SkillCardProps) {
 const skills = [
   {
     category: "Data Engineering & ETL",
-    icon: <Database className="text-cyan-400" />,
+    icon: Database,
     items: ["Talend & Airflow", "Architecture BigQuery", "Pipelines SQL & ETL", "Python / PySpark distribué", "Docker & Cloud Storage"]
   },
   {
     category: "BI & Data Visualization",
-    icon: <BarChart3 className="text-cyan-400" />,
+    icon: BarChart3,
     items: ["Looker (LookML)", "Power BI (DAX)", "Looker Studio", "Dashboards Stratégiques"]
   },
   {
     category: "IA & Machine Learning",
-    icon: <Cpu className="text-cyan-400" />,
+    icon: Cpu,
     items: ["Maintenance Prédictive", "Forecasting (Ventes)", "Python (Scikit-learn)", "CNN & Deep Learning", "LLM & Chatbots Pro"]
   }
 ]
