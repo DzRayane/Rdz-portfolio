@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, Linkedin, Github, ArrowUpRight } from "lucide-react"
+import { Mail, Linkedin, Github, ArrowUpRight, Phone } from "lucide-react"
 
 export function Contact() {
   return (
@@ -26,9 +26,21 @@ export function Contact() {
           Disponible pour CDI Septembre 2026
         </div>
 
+        {/* Email + Phone info */}
+        <div className="mb-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <div className="inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm text-muted-foreground" style={{ background: 'rgba(0,229,255,0.04)', border: '1px solid rgba(0,229,255,0.1)' }}>
+            <Mail className="h-4 w-4 text-primary shrink-0" />
+            <span>dzirirayane03@gmail.com</span>
+          </div>
+          <div className="inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm text-muted-foreground" style={{ background: 'rgba(0,229,255,0.04)', border: '1px solid rgba(0,229,255,0.1)' }}>
+            <Phone className="h-4 w-4 text-primary shrink-0" />
+            <span>+33 07 60 17 56 89</span>
+          </div>
+        </div>
+
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <a
-            href="mailto:dzirirayane03@gmail.com" 
+            href="mailto:dzirirayane03@gmail.com"
             className="group inline-flex items-center gap-3 rounded-xl px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:scale-105 neon-glow-strong"
             style={{ background: '#00E5FF' }}
           >
