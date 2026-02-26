@@ -16,10 +16,11 @@ function TimelineItem({ title, company, location, period, items, current }: Time
     <div className="group relative flex gap-6 pb-12 last:pb-0">
       <div className="relative flex flex-col items-center">
         <div
-          className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-xl ${
-            current ? "neon-glow-strong" : ""
-          }`}
-          style={{ background: current ? 'rgba(0,229,255,0.15)' : 'rgba(0,229,255,0.06)', border: `1px solid ${current ? 'rgba(0,229,255,0.4)' : 'rgba(0,229,255,0.1)'}` }}
+          className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-xl ${current ? "neon-glow-strong" : ""}`}
+          style={{
+            background: current ? 'rgba(0,229,255,0.15)' : 'rgba(0,229,255,0.06)',
+            border: `1px solid ${current ? 'rgba(0,229,255,0.4)' : 'rgba(0,229,255,0.1)'}`,
+          }}
         >
           <Briefcase className={`h-4 w-4 ${current ? "text-primary" : "text-primary/50"}`} />
         </div>
@@ -58,7 +59,7 @@ function TimelineItem({ title, company, location, period, items, current }: Time
           {current && (
             <div className="mt-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-primary" style={{ background: 'rgba(0,229,255,0.06)', border: '1px solid rgba(0,229,255,0.15)' }}>
               <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-              En poste
+              En poste (Alternance)
             </div>
           )}
         </div>
@@ -69,16 +70,38 @@ function TimelineItem({ title, company, location, period, items, current }: Time
 
 const experiences: TimelineItemProps[] = [
   {
-    title: "Data Analyst & BI Developer (Alternance)",
+    title: "Développeur BI & IA (Alternance)",
     company: "Exxelia",
     location: "Paris, France",
-    period: "Sept. 2024 - Présent",
+    period: "Sept. 2024 - En cours",
     current: true,
     items: [
-      "Conception et développement de tableaux de bord interactifs pour le pilotage de la performance industrielle",
-      "Optimisation des flux de données (ETL) et automatisation de rapports décisionnels",
-      "Analyse de données complexes pour identifier des leviers de réduction de coûts et d'efficacité opérationnelle",
-      "Collaboration étroite avec les équipes métiers pour définir les indicateurs clés (KPIs)",
+      "Architecture et automatisation de flux ETL via Talend et Airflow vers Google BigQuery, réduisant les temps de traitement de 40%",
+      "Conception de +20 dashboards stratégiques sur Looker (LookML) pour le pilotage industriel (-30% de temps de reporting manuel)",
+      "Intégration d'un assistant virtuel interne (LLM) pour centraliser l'accès aux documents techniques pour 150 collaborateurs",
+      "Mise en production d'algorithmes de Machine Learning pour la maintenance prédictive, réduisant les arrêts machines de 15%",
+    ],
+  },
+  {
+    title: "Data Scientist (Stage)",
+    company: "Saidal",
+    location: "Alger",
+    period: "2023 - 2024",
+    current: false,
+    items: [
+      "Développement d'un modèle de forecasting pour la prédiction des ventes pharmaceutiques (+12% de précision)",
+      "Nettoyage, analyse exploratoire (EDA) et benchmarking de performances sur des datasets massifs avec Python",
+    ],
+  },
+  {
+    title: "Data Analyst (Stage)",
+    company: "Data Digital One",
+    location: "Alger",
+    period: "2022 - 2023",
+    current: false,
+    items: [
+      "Développement d'une structure de reporting automatisée avec Power BI (Power Query & DAX)",
+      "Recueil des besoins métiers et conception de tableaux de bord pour le suivi quotidien des KPIs",
     ],
   },
 ]
@@ -100,7 +123,7 @@ export function Experience() {
             {"Expériences professionnelles"}
           </h2>
           <p className="mx-auto mt-4 max-w-md text-muted-foreground">
-            {"Mon parcours spécialisé en analyse de données et Business Intelligence."}
+            {"Expertise en BI, architecture de données et Intelligence Artificielle appliquée à l'industrie."}
           </p>
         </div>
 
