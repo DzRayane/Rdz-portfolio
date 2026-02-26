@@ -39,7 +39,7 @@ export function Hero() {
           </div>
 
           <h1 className="mb-4 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-            Rayane <span className="text-[#00E5FF] shadow-[#00E5FF]/20">Dziri</span>
+            Rayane <span className="text-[#00E5FF]">Dziri</span>
           </h1>
 
           <p className="mb-2 text-lg font-medium text-[#00E5FF]/80 md:text-xl uppercase tracking-widest">
@@ -47,12 +47,12 @@ export function Hero() {
           </p>
 
           <p className="mb-8 max-w-lg text-base leading-relaxed text-slate-400 lg:max-w-md">
-            {"Passionné par la transformation des données en leviers de décision stratégiques. Actuellement en alternance chez Exxelia."}
+            Passionné par la transformation des données en leviers de décision stratégiques. Actuellement en alternance chez Exxelia.
           </p>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
             <a
-              href="#projets"
+              href="#projects"
               className="inline-flex items-center gap-2 rounded-xl px-7 py-3 text-sm font-bold text-black transition-all hover:scale-105 shadow-[0_0_20px_rgba(0,229,255,0.4)]"
               style={{ background: '#00E5FF' }}
             >
