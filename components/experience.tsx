@@ -14,7 +14,6 @@ interface TimelineItemProps {
 function TimelineItem({ title, company, location, period, items, current }: TimelineItemProps) {
   return (
     <div className="group relative flex gap-6 pb-12 last:pb-0">
-      {/* Timeline line */}
       <div className="relative flex flex-col items-center">
         <div
           className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-xl ${
@@ -30,7 +29,6 @@ function TimelineItem({ title, company, location, period, items, current }: Time
         />
       </div>
 
-      {/* Content */}
       <div className="flex-1 pb-2">
         <div className="glass rounded-2xl p-6 transition-all duration-300 hover:scale-[1.01]">
           <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
@@ -50,8 +48,8 @@ function TimelineItem({ title, company, location, period, items, current }: Time
             </div>
           </div>
           <ul className="flex flex-col gap-2">
-            {items.map((item, index) => (
-              <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+            {items.map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
                 <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary/50" />
                 {item}
               </li>
@@ -60,7 +58,7 @@ function TimelineItem({ title, company, location, period, items, current }: Time
           {current && (
             <div className="mt-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-primary" style={{ background: 'rgba(0,229,255,0.06)', border: '1px solid rgba(0,229,255,0.15)' }}>
               <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-              En poste (Alternance)
+              En poste
             </div>
           )}
         </div>
@@ -71,36 +69,16 @@ function TimelineItem({ title, company, location, period, items, current }: Time
 
 const experiences: TimelineItemProps[] = [
   {
-    title: "Développeur BI & IA (Alternance)",
+    title: "Data Analyst & BI Developer (Alternance)",
     company: "Exxelia",
     location: "Paris, France",
-    period: "Sept. 2024 - En cours",
+    period: "Sept. 2024 - Présent",
     current: true,
     items: [
-      "Architecture et automatisation de flux ETL via Talend et Airflow vers Google BigQuery, réduisant les temps de traitement de 40% [cite: 10, 12]",
-      "Conception de +20 dashboards stratégiques sur Looker (LookML) pour le pilotage industriel (-30% de temps de reporting manuel) [cite: 13]",
-      "Intégration d'un assistant virtuel interne (LLM) pour centraliser l'accès aux documents techniques pour 150 collaborateurs [cite: 14]",
-      "Mise en production d'algorithmes de Machine Learning pour la maintenance prédictive, réduisant les arrêts machines de 15% [cite: 15]",
-    ],
-  },
-  {
-    title: "Data Scientist (Stage)",
-    company: "Saidal",
-    location: "Alger",
-    period: "2023 - 2024",
-    items: [
-      "Développement d'un modèle de forecasting pour la prédiction des ventes pharmaceutiques (+12% de précision) [cite: 16, 18]",
-      "Nettoyage, analyse exploratoire (EDA) et benchmarking de performances sur des datasets massifs avec Python [cite: 19]",
-    ],
-  },
-  {
-    title: "Data Analyst (Stage)",
-    company: "Data Digital One",
-    location: "Alger",
-    period: "2022 - 2023",
-    items: [
-      "Développement d'une structure de reporting automatisée avec Power BI (Power Query & DAX) [cite: 20, 23]",
-      "Recueil des besoins métiers et conception de tableaux de bord pour le suivi quotidien des KPIs [cite: 21, 23]",
+      "Conception et développement de tableaux de bord interactifs pour le pilotage de la performance industrielle",
+      "Optimisation des flux de données (ETL) et automatisation de rapports décisionnels",
+      "Analyse de données complexes pour identifier des leviers de réduction de coûts et d'efficacité opérationnelle",
+      "Collaboration étroite avec les équipes métiers pour définir les indicateurs clés (KPIs)",
     ],
   },
 ]
@@ -122,7 +100,7 @@ export function Experience() {
             {"Expériences professionnelles"}
           </h2>
           <p className="mx-auto mt-4 max-w-md text-muted-foreground">
-            {"Expertise en BI, architecture de données et Intelligence Artificielle appliquée à l'industrie."}
+            {"Mon parcours spécialisé en analyse de données et Business Intelligence."}
           </p>
         </div>
 

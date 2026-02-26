@@ -3,7 +3,8 @@ export function Footer() {
     <footer className="border-t border-border/50 py-8 px-6">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
         <p className="text-xs text-muted-foreground">
-          {"© 2026 Rayane DZIRI. Tous droits réservés."}
+          {/* Mise à jour avec ton nom */}
+          {"© 2026 Rayane Dziri. Tous droits réservés."}
         </p>
         <p className="text-xs text-muted-foreground">
           {"Conçu avec "}

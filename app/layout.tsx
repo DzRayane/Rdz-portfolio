@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  // Mis à jour avec ton nom et ton poste
   title: 'Rayane DZIRI | Data Analyst & BI Developer',
-  description: 'Portfolio de Rayane DZIRI - Data Analyst & BI Developer. Expertise en architecture ETL (Talend, Airflow), BigQuery et Data Visualization (Looker, Power BI).',
+  description: 'Portfolio de Rayane DZIRI - Data Analyst & BI Developer. Expertise en architecture ETL, BigQuery et Data Visualization.',
   generator: 'v0.app',
   icons: {
     icon: [
